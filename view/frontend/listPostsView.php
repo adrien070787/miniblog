@@ -16,7 +16,7 @@ ob_start(); ?>
     <h1>Mon super blog !</h1>
     <p>Derniers billets du blog :</p>
 
-<?
+<?php
 while ($datas = $posts->fetch()) {
     ?>
     <div class="news">
@@ -31,7 +31,7 @@ while ($datas = $posts->fetch()) {
             <em><a href="?action=post&id=<?= $datas['id'] ?>">Commentaires</a></em>
         </p>
     </div>
-    <?
+    <?php
 } // Fin de la boucle des billets
 $posts->closeCursor();
 paginate();
