@@ -7,8 +7,9 @@
  */
 ?>
 
-<?php $title = 'Mon blog - Accueil'; ?>
-<?php ob_start(); ?>
+<?php
+$title = 'Mon blog - Accueil';
+ob_start(); ?>
 
     <!-- Afichage des données -->
 
@@ -33,6 +34,7 @@ while ($datas = $posts->fetch()) {
     <?
 } // Fin de la boucle des billets
 $posts->closeCursor();
+paginate();
 
 $content = ob_get_clean();
 require('template.php');

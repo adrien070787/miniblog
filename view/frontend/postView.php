@@ -4,7 +4,7 @@ ob_start();
 ?>
 
     <h1>Mon super blog !</h1>
-    <p><a href="../../miniblog/index.php">Retour à la liste des billets</a></p>
+    <p><a href="../miniblog2/index.php">Retour à la liste des billets</a></p>
 
 
     <div class="news">

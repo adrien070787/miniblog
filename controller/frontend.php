@@ -1,10 +1,14 @@
 <?php
 
-require_once('model/Manager.php');
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
+//require_once('model/Manager.php');
+//require_once('model/PostManager.php');
+//require_once('model/CommentManager.php');
 
+function chargeClasses($class) {
+    require_once 'model/'.$class.'.php';
+}
 
+spl_autoload_register('chargeClasses');
 
 function listPosts() {
     if (isset($_GET['page'])&& ($_GET['page']>0)) {
@@ -15,6 +19,7 @@ function listPosts() {
         $postManager = new PostManager(0, 0);
         $posts =  $postManager->getPosts(0);
     }
+
     require('view/frontend/listPostsView.php');
 }
 
